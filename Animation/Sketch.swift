@@ -19,17 +19,49 @@ class Sketch : NSObject {
         // Set starting position
         x = 250
         
+       //get rid of borders
+        canvas.drawShapesWithBorders = false
+        
+       
+        
     }
     
     // This function runs repeatedly, forever, to create the animated effect
     func draw() {
+       
+        
+        // Draw the ellipses that move right
         
         // Change position
-        x -= 1
+        x += 1
         
-        // Draw an ellipse in the middle of the canvas
+        //change colour
+        canvas.fillColor = Color.green
         canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
         
+        //change colour
+        canvas.fillColor = Color.purple
+        canvas.drawEllipse(at: Point(x: x, y: 450), width: 50, height: 50)
+       
+        //change colour
+        canvas.fillColor = Color.black
+        canvas.drawEllipse(at: Point(x: x, y: 50), width: 50, height: 50)
+        
+        //draw the ellipses that move left
+        
+//        // Change position
+//         x -= 1
+         
+         //change colour
+         canvas.fillColor = Color.orange
+         canvas.drawEllipse(at: Point(x: x, y: 350), width: 50, height: 50)
+         
+         //change colour
+         canvas.fillColor = Color.blue
+         canvas.drawEllipse(at: Point(x: x, y: 150), width: 50, height: 50)
+        
+        
     }
+    
     
 }
