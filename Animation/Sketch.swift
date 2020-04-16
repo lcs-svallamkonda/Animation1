@@ -49,16 +49,14 @@ class Sketch : NSObject {
         
         //draw the ellipses that move left
         
-//        // Change position
-//         x -= 1
          
          //change colour
          canvas.fillColor = Color.orange
-         canvas.drawEllipse(at: Point(x: offset, y: 350), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: canvas.width - offset, y: 350), width: 50, height: 50)
          
          //change colour
          canvas.fillColor = Color.blue
-         canvas.drawEllipse(at: Point(x: offset, y: 150), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: canvas.width - offset, y: 150), width: 50, height: 50)
         
         
     }
