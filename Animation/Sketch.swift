@@ -7,8 +7,8 @@ class Sketch : NSObject {
     //       Therefore, the line immediately below must always be present.
     let canvas : Canvas
     
-    // Position of circle
-    var x : Int
+    // AN offset from a starting point
+    var offset : Int
     
     // This function runs once
     override init() {
@@ -17,7 +17,7 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        offset = 250
         
        //get rid of borders
         canvas.drawShapesWithBorders = false
@@ -33,19 +33,19 @@ class Sketch : NSObject {
         // Draw the ellipses that move right
         
         // Change position
-        x += 1
+        offset += 1
         
         //change colour
         canvas.fillColor = Color.green
-        canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: offset, y: 250), width: 50, height: 50)
         
         //change colour
         canvas.fillColor = Color.purple
-        canvas.drawEllipse(at: Point(x: x, y: 450), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: offset, y: 450), width: 50, height: 50)
        
         //change colour
         canvas.fillColor = Color.black
-        canvas.drawEllipse(at: Point(x: x, y: 50), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: offset, y: 50), width: 50, height: 50)
         
         //draw the ellipses that move left
         
@@ -54,11 +54,11 @@ class Sketch : NSObject {
          
          //change colour
          canvas.fillColor = Color.orange
-         canvas.drawEllipse(at: Point(x: x, y: 350), width: 50, height: 50)
+         canvas.drawEllipse(at: Point(x: offset, y: 350), width: 50, height: 50)
          
          //change colour
          canvas.fillColor = Color.blue
-         canvas.drawEllipse(at: Point(x: x, y: 150), width: 50, height: 50)
+         canvas.drawEllipse(at: Point(x: offset, y: 150), width: 50, height: 50)
         
         
     }
