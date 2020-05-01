@@ -29,7 +29,7 @@ class Sketch : NSObject {
         // Change position
         x += 0.5
         y = pow((1/8 * (x - 250)), 2)
-        
+        y = -(y - 500)
         
         // Draw an ellipse in the middle of the canvas
         canvas.drawEllipse(at: Point(x: x, y: y), width: 50, height: 50)
