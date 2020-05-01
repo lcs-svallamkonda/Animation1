@@ -18,7 +18,7 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 1
+        x = 0
         y = 0
         
     }
@@ -28,8 +28,8 @@ class Sketch : NSObject {
         
         // Change position
         x += 0.5
-        y = pow((1/8 * (x - 250)), 2)
-        y = -(y - 500)
+        y = 1/2 * pow((1/8 * (x - 250)), 2)
+        y = -(y - 250)
         
         // Draw an ellipse in the middle of the canvas
         canvas.drawEllipse(at: Point(x: x, y: y), width: 50, height: 50)
