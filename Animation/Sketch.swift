@@ -8,7 +8,10 @@ class Sketch : NSObject {
     let canvas : Canvas
     
     // Position of circle
-    var x : Int
+    var positionX : Int
+    var positionY : Int
+    var deltaY : Int
+    var deltaX : Int
     
     // This function runs once
     override init() {
@@ -17,7 +20,12 @@ class Sketch : NSObject {
         canvas = Canvas(width: 500, height: 500)
         
         // Set starting position
-        x = 250
+        positionX = Int.random(in: 0...500)
+        positionY = Int.random(in: 0...500)
+        
+        //set starting change value
+        deltaY = 1
+        deltaX = 1
         
     }
     
@@ -25,11 +33,21 @@ class Sketch : NSObject {
     func draw() {
         
         // Change position
-        x -= 1
+        positionX -= deltaX
+        positionY -= deltaY
+        print(positionY)
         
         // Draw an ellipse in the middle of the canvas
-        canvas.drawEllipse(at: Point(x: x, y: 250), width: 50, height: 50)
+        canvas.drawEllipse(at: Point(x: positionX, y: positionY), width: 50, height: 50)
         
+        //make ball "bounce back" when it touches the borders
+        if positionX == 0 || positionX == 500 {
+            deltaX = -deltaX
+        }
+        
+        if positionY == 0 || positionY == 500 {
+            deltaY = -deltaY
+        }
     }
     
 }
